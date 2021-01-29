@@ -13,3 +13,6 @@ dockerbuild:
 
 dockerpush:
 	docker push gcr.io/useful-aquifer-302901/myapp
+	
+rundocker:
+	gcloud beta run services replace service.yaml
