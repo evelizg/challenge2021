@@ -1,0 +1,62 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: myapp
+  namespace: '738995651627'
+  selfLink: /apis/serving.knative.dev/v1/namespaces/738995651627/services/myapp
+  uid: 337f742a-2226-45d2-bc8d-b0ee54fbdc38
+  resourceVersion: AAW6DXMgD0Y
+  generation: 2
+  creationTimestamp: '2021-01-29T17:28:55.797156Z'
+  labels:
+    cloud.googleapis.com/location: us-central1
+  annotations:
+    run.googleapis.com/client-name: cloud-console
+    serving.knative.dev/creator: challengeveris@gmail.com
+    serving.knative.dev/lastModifier: challengeveris@gmail.com
+    client.knative.dev/user-image: gcr.io/useful-aquifer-302901/myapp:tag1
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+spec:
+  template:
+    metadata:
+      name: myapp-00002-cim
+      annotations:
+        run.googleapis.com/client-name: cloud-console
+        autoscaling.knative.dev/maxScale: '100'
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      serviceAccountName: 738995651627-compute@developer.gserviceaccount.com
+      containers:
+      - image: gcr.io/useful-aquifer-302901/myapp:tag1
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 256Mi
+  traffic:
+  - percent: 100
+    latestRevision: true
+status:
+  observedGeneration: 2
+  conditions:
+  - type: Ready
+    status: 'True'
+    lastTransitionTime: '2021-01-29T17:36:52.249473Z'
+  - type: ConfigurationsReady
+    status: 'True'
+    lastTransitionTime: '2021-01-29T17:36:47.558992Z'
+  - type: RoutesReady
+    status: 'True'
+    lastTransitionTime: '2021-01-29T17:36:52.375366Z'
+  latestReadyRevisionName: myapp-00002-cim
+  latestCreatedRevisionName: myapp-00002-cim
+  traffic:
+  - revisionName: myapp-00002-cim
+    percent: 100
+    latestRevision: true
+  url: https://myapp-qezqdlbwtq-uc.a.run.app
+  address:
+    url: https://myapp-qezqdlbwtq-uc.a.run.app
