@@ -18,4 +18,4 @@ dockerpull:
 	docker pull gcr.io/useful-aquifer-302901/myapp:tag1
 	
 rundocker:
-	gcloud beta run services replace service.yaml
+	gcloud beta run deploy myapp --image=gcr.io/useful-aquifer-302901/myapp:tag1 --allow-unauthenticated --port=5000 
