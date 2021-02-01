@@ -1,4 +1,5 @@
 all: init plan apply
+allapp: dockerbuild dockerpush rundocker
 
 plan:
 	terraform plan
@@ -9,7 +10,7 @@ destroy:
 	terraform destroy
 
 dockerbuild:
-	docker build -t gcr.io/useful-aquifer-302901/myapp .
+	docker build -t gcr.io/useful-aquifer-302901/myapp:tag1 .
 
 dockerpush:
 	docker push gcr.io/useful-aquifer-302901/myapp:tag1

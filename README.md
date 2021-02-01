@@ -11,13 +11,13 @@ make destroy
 
 # Para crear imagen docker
 
-docker build -t gcr.io/useful-aquifer-302901/myapp .
+make dockerbuild
 
-# Para subir la imagen docker
+# Para subir la imagen docker al registry de GCP
 make dockerpush	
 
 # Para descargar la imagen docker
 make dockerpull	
 
-# Para levantar la app
+# Para correr la app en GCP
 make rundocker
