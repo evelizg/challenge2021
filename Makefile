@@ -1,5 +1,5 @@
 all: init plan apply
-allapp: dockerbuild dockerpush rundocker
+allapp: build push run
 
 plan:
 	terraform plan
@@ -9,14 +9,17 @@ apply:
 destroy:
 	terraform destroy
 
-dockerbuild:
+build:
 	docker build -t gcr.io/useful-aquifer-302901/myapp:tag1 .
 
-dockerpush:
+push:
 	docker push gcr.io/useful-aquifer-302901/myapp:tag1
 
-dockerpull:
+pull:
 	docker pull gcr.io/useful-aquifer-302901/myapp:tag1
 	
-rundocker:
+run:
 	gcloud beta run deploy myapp --image=gcr.io/useful-aquifer-302901/myapp:tag1 --allow-unauthenticated --port=5000 
+
+delete:	
+	gcloud run services delete myapp
