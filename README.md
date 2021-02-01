@@ -3,11 +3,14 @@
 # Para conseguir el cuadrado de un numero seria url/home/numero, la respuesta seria el cuadrado del numero ingresado
 #
 #
-# Para el cluster kuberntes realizar lo siguiente:
+# Para crear el cluster kuberntes realizar lo siguiente:
 
 make all
 
 make destroy
+
+# Para correr la app en GCP (build, publish, run):
+make allapp
 
 # Para crear imagen docker
 
