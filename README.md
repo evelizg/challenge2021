@@ -1,13 +1,12 @@
-# Para crear el cluster kuberntes realizar lo siguiente:
+# Para crear y eliminar el cluster kuberntes realizar lo siguiente:
 
 make all
 
 make destroy
 
-# Para correr la app en GCP (build, publish, run):
+# Para correr y eliminar la app en GCP (build, publish, run):
 make allapp
 
-# Para eliminar la app de GCP:
 make delete
 
 # Uso de la APP
